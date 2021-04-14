@@ -34,21 +34,31 @@ const squadre = [
 ];
 //console.log(squadre);
 
-//2a. creo un array vuoto 
-const nuovoSquadre = [];
+//3a. creo un array vuoto 
+const arraySquadra = [];
 
-//2b. creo un ciclo for per assegnare dei numeri random al posto degli 0 nei punti fatti e falli subiti
+//2a. creo un ciclo for per assegnare dei numeri random al posto degli 0 nei punti fatti e falli subiti
 for ( let i = 0; i < squadre.length; i++ ) {
     let thisSquadra = squadre[i]; 
 
-    //2c. assegno un numero random a punti fatti 
+    //2b. assegno un numero random a punti fatti 
     thisSquadra.punti_fatti = getRandomInteger(1, 80);
-    //2d. e assegno un numero random anche ai falli subiti 
+    //2c. e assegno un numero random anche ai falli subiti 
     thisSquadra.falli_subiti = getRandomInteger(1, 100);
+
+    //3b utilizzo destructuring per ricavare le variabili dell'oggetto thisSquadra (in questo caso il nome e i falli subiti)
+    let {nome, falli_subiti} = thisSquadra;
+    //3c. creo un nuovo oggetto che contiene i nomi e i falli subiti
+    const nuovaSquadra = {
+        nome,
+        falli_subiti
+    };
+    //3d. aggiungo ogni nuovo oggetto all' array vuoto
+    arraySquadra.push(nuovaSquadra);
 }
+//4a. stampo i due array in console 
 console.log(squadre);
-
-
+console.log(arraySquadra);
 
 
 // Funzione getRandomInteger
