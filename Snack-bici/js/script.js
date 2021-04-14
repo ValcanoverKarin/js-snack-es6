@@ -7,7 +7,7 @@ const biciclette = [
     {
         //bicicletta 0
         'nome': 'Bianchini',
-        'peso': 5
+        'peso': 7
     },
     {
         //bicicletta 1
@@ -28,3 +28,14 @@ const biciclette = [
 
 //2a. imposto la bicicletta piu leggera come oggetto vuoto
 let biciclettaPiuLeggera = biciclette[0];
+
+//2b. creo un ciclo for 
+for ( let i = 0; i < biciclette.length; i++ ) {
+    let thisBicicletta = biciclette[i];
+    //2c. per trovare quale delle biciclette nell array (biciclette) è la piu leggera 
+    if ( thisBicicletta.peso < biciclettaPiuLeggera.peso ) {
+        biciclettaPiuLeggera = thisBicicletta;
+    }
+}
+
+console.log(biciclettaPiuLeggera);
