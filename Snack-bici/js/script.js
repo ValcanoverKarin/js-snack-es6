@@ -37,5 +37,20 @@ for ( let i = 0; i < biciclette.length; i++ ) {
         biciclettaPiuLeggera = thisBicicletta;
     }
 }
-
 console.log(biciclettaPiuLeggera);
+
+//2c. utilizzo destructuring per ricavare le variabili dell'oggetto biciclettaPiuLeggera (in questo caso il nome e il peso)
+const { nome, peso } = biciclettaPiuLeggera;
+//console.log(nome);
+//console.log(peso);
+
+//2d. uso template literal per stampare il nome e il peso della bicicletta piu leggera
+const caratteristicheBiciclettaPiuLeggera = `
+    <ul>
+        <li>Nome: ${nome}</li>
+        <li>Peso: ${peso}</li>
+    </ul>
+`;
+
+//2e. Stampo le caratteristiche della bicicletta piu leggera
+document.getElementById('bicicletta_leggera').innerHTML = caratteristicheBiciclettaPiuLeggera;
