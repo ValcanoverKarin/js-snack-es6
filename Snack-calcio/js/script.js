@@ -10,26 +10,48 @@ const squadre = [
     {
         //squadra 0
         'nome' : 'Ascoli',
-        'puntifatti' : 0,
-        'fallisubiti' : 0
+        'punti_fatti' : 0,
+        'falli_subiti' : 0
     },
     {
         //squadra 1
         'nome' : 'Reggiana',
-        'puntifatti' : 0,
-        'fallisubiti' : 0
+        'punti_fatti' : 0,
+        'falli_subiti' : 0
     },
     {
         //squadra 2
         'nome' : 'Cosenza',
-        'puntifatti' : 0,
-        'fallisubiti' : 0
+        'punti_fatti' : 0,
+        'falli_subiti' : 0
     },
     {
         //squadra 3
         'nome' : 'Pordenone',
-        'puntifatti' : 0,
-        'fallisubiti' : 0
+        'punti_fatti' : 0,
+        'falli_subiti' : 0
     }
 ];
 //console.log(squadre);
+
+//2a. creo un array vuoto 
+const nuovoSquadre = [];
+
+//2b. creo un ciclo for per assegnare dei numeri random al posto degli 0 nei punti fatti e falli subiti
+for ( let i = 0; i < squadre.length; i++ ) {
+    let thisSquadra = squadre[i]; 
+
+    //2c. assegno un numero random a punti fatti 
+    thisSquadra.punti_fatti = getRandomInteger(1, 80);
+    //2d. e assegno un numero random anche ai falli subiti 
+    thisSquadra.falli_subiti = getRandomInteger(1, 100);
+}
+console.log(squadre);
+
+
+
+
+// Funzione getRandomInteger
+function getRandomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
